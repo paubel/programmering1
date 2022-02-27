@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<title>P1 &#8211; Kapitel 2 &#8211; Pauls Python Programmering</title>
+<style>
+.stb-container-css {margin: 10px 10px 10px 10px;}.stb-box {}.stb-caption-box {}.stb-body-box {}
+/* Class Dependent Parameters */
+.stb-border.stb-alert-container {border: 1px none #FF4F4A;}.stb-side.stb-alert-container {background: #1D1A1A;filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1D1A1A', endColorstr='#504848',GradientType=0 );background: -moz-linear-gradient(top,  #1D1A1A 30%, #504848 90%);background: -webkit-gradient(linear, left top, left bottom, color-stop(30%,#1D1A1A), color-stop(90%,#504848));background: -webkit-linear-gradient(top,  #1D1A1A 30%,#504848 90%);background: -o-linear-gradient(top,  #1D1A1A 30%,#504848 90%);background: -ms-linear-gradient(top,  #1D1A1A 30%,#504848 90%);background: linear-gradient(#1D1A1A 30%, #504848 90%);}.stb-side-none.stb-alert-container {background: #fDCBC9;filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fDCBC9', endColorstr='#FB7D78',GradientType=0 );background: -moz-linear-gradient(top,  #fDCBC9 30%, #FB7D78 90%);background: -webkit-gradient(linear, left top, left bottom, color-stop(30%,#fDCBC9), color-stop(90%,#FB7D78));background: -webkit-linear-gradient(top,  #fDCBC9 30%,#FB7D78 90%);background: -o-linear-gradient(top,  #fDCBC9 30%,#FB7D78 90%);background: -ms-linear-gradient(top,  #fDCBC9 30%,#FB7D78 90%);background: linear-gradient(#fDCBC9 30%, #FB7D78 90%);}.stb-alert_box {background: #fDCBC9;filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fDCBC9', endColorstr='#FB7D78',GradientType=0 );background: -moz-linear-gradient(top,  #fDCBC9 30%, #FB7D78 90%);background: -webkit-gradient(linear, left top, left bottom, color-stop(30%,#fDCBC9), color-stop(90%,#FB7D78));background: -webkit-linear-gradient(top,  #fDCBC9 30%,#FB7D78 90%);background: -o-linear-gradient(top,  #fDCBC9 30%,#FB7D78 90%);background: -ms-linear-gradient(top,  #fDCBC9 30%,#FB7D78 90%);background: linear-gradient(#fDCBC9 30%, #FB7D78 90%);color: #000000;}.stb-alert-caption_box {background: #1D1A1A;background: -moz-linear-gradient(top,  #1D1A1A 30%, #504848 90%);background: -webkit-gradient(linear, left top, left bottom, color-stop(30%,#1D1A1A), color-stop(90%,#504848));background: -webkit-linear-gradient(top,  #1D1A1A 30%,#504848 90%);background: -o-linear-gradient(top,  #1D1A1A 30%,#504848 90%);background: -ms-linear-gradient(top,  #1D1A1A 30%,#504848 90%);background: linear-gradient(#1D1A1A 30%, #504848 90%);color: #FFFFFF;}.stb-alert-body_box {background: #fDCBC9;filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fDCBC9', endColorstr='#FB7D78',GradientType=0 );background: -moz-linear-gradient(top,  #fDCBC9 30%, #FB7D78 90%);background: -webkit-gradient(linear, left top, left bottom, color-stop(30%,#fDCBC9), color-stop(90%,#FB7D78));background: -webkit-linear-gradient(top,  #fDCBC9 30%,#FB7D78 90%);background: -o-linear-gradient(top,  #fDCBC9 30%,#FB7D78 90%);background: -ms-linear-gradient(top,  #fDCBC9 30%,#FB7D78 90%);background: linear-gradient(#fDCBC9 30%, #FB7D78 90%);color: #000000;}.stb-border.stb-black-container {border: 1px none #6E6E6E;}.stb-side.stb-black-container {background: #4B4747;filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4B4747', endColorstr='#141414',GradientType=0 );background: -moz-linear-gradient(top,  #4B4747 30%, #141414 90%);background: -webkit-gradient(linear, left top, left bottom, color-stop(30%,#4B4747), color-stop(90%,#141414));background: -webkit-linear-gradient(top,  #4B4747 30%,#141414 90%);background: -o-linear-gradient(top,  #4B4747 30%,#141414 90%);background: -ms-linear-gradient(top,  #4B4747 30%,#141414 90%);background: linear-gradient(#4B4747 30%, #141414 90%);}.stb-side-none.stb-black-container {background: #3B3B3B;filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3B3B3B', endColorstr='#000000',GradientType=0 );background: -moz-linear-gradient(top,  #3B3B3B 30%, #000000 90%);background: -webkit-gradient(linear, left top, left bottom, color-stop(30%,#3B3B3B), color-stop(90%,#000000));background: -webkit-linear-gradient(top,  #3B3B3B 30%,#000000 90%);background: -o-linear-gradient(top,  #3B3B3B 30%,#000000 90%);background: -ms-linear-gradient(top,  #3B3B3B 30%,#000000 90%);background: linear-gradient(#3B3B3B 30%, #000000 90%);}.stb-black_box {background: #3B3B3B;filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3B3B3B', endColorstr='#000000',GradientType=0 );background: -moz-linear-gradient(top,  #3B3B3B 30%, #000000 90%);background: -webkit-gradient(linear, left top, left bottom, color-stop(30%,#3B3B3B), color-stop(90%,#000000));background: -webkit-linear-gradient(top,  #3B3B3B 30%,#000000 90%);background: -o-linear-gradient(top,  #3B3B3B 30%,#000000 90%);background: -ms-linear-gradient(top,  #3B3B3B 30%,#000000 90%);background: linear-gradient(#3B3B3B 30%, #000000 90%);color: #FFFFFF;}.stb-black-caption_box {background: #4B4747;background: -moz-linear-gradient(top,  #4B4747 30%, #141414 90%);background: -webkit-gradient(linear, left top, left bottom, color-stop(30%,#4B4747), color-stop(90%,#141414));background: -webkit-linear-gradient(top,  #4B4747 30%,#141414 90%);background: -o-linear-gradient(top,  #4B4747 30%,#141414 90%);background: -ms-linear-gradient(top,  #4B4747 30%,#141414 90%);background: linear-gradient(#4B4747 30%, #141414 90%);color: #FFFFFF;}.stb-black-body_box {background: #3B3B3B;filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3B3B3B', endColorstr='#000000',GradientType=0 );background: -moz-linear-gradient(top,  #3B3B3B 30%, #000000 90%);background: -webkit-gradient(linear, left top, left bottom, color-stop(30%,#3B3B3B), color-stop(90%,#000000));background: -webkit-linear-gradient(top,  #3B3B3B 30%,#000000 90%);background: -o-linear-gradient(top,  #3B3B3B 30%,#000000 90%);background: -ms-linear-gradient(top,  #3B3B3B 30%,#000000 90%);background: linear-gradient(#3B3B3B 30%, #000000 90%);color: #FFFFFF;}.stb-border.stb-custom-container {border: 1px none #F844EE;}.stb-side.stb-custom-container {background: #1D1A1A;filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1D1A1A', endColorstr='#504848',GradientType=0 );background: -moz-linear-gradient(top,  #1D1A1A 30%, #504848 90%);background: -webkit-gradient(linear, left top, left bottom, color-stop(30%,#1D1A1A), color-stop(90%,#504848));background: -webkit-linear-gradient(top,  #1D1A1A 30%,#504848 90%);background: -o-linear-gradient(top,  #1D1A1A 30%,#504848 90%);background: -ms-linear-gradient(top,  #1D1A1A 30%,#504848 90%);background: linear-gradient(#1D1A1A 30%, #504848 90%);}.stb-side-none.stb-custom-container {background: #F7CDF5;filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#F7CDF5', endColorstr='#F77DF1',GradientType=0 );background: -moz-linear-gradient(top,  #F7CDF5 30%, #F77DF1 90%);background: -webkit-gradient(linear, left top, left bottom, color-stop(30%,#F7CDF5), color-stop(90%,#F77DF1));background: -webkit-linear-gradient(top,  #F7CDF5 30%,#F77DF1 90%);background: -o-linear-gradient(top,  #F7CDF5 30%,#F77DF1 90%);background: -ms-linear-gradient(top,  #F7CDF5 30%,#F77DF1 90%);background: linear-gradient(#F7CDF5 30%, #F77DF1 90%);}.stb-custom_box {background: #F7CDF5;filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#F7CDF5', endColorstr='#F77DF1',GradientType=0 );background: -moz-linear-gradient(top,  #F7CDF5 30%, #F77DF1 90%);background: -webkit-gradient(linear, left top, left bottom, color-stop(30%,#F7CDF5), color-stop(90%,#F77DF1));background: -webkit-linear-gradient(top,  #F7CDF5 30%,#F77DF1 90%);background: -o-linear-gradient(top,  #F7CDF5 30%,#F77DF1 90%);background: -ms-linear-gradient(top,  #F7CDF5 30%,#F77DF1 90%);background: linear-gradient(#F7CDF5 30%, #F77DF1 90%);color: #000000;}.stb-custom-caption_box {background: #1D1A1A;background: -moz-linear-gradient(top,  #1D1A1A 30%, #504848 90%);background: -webkit-gradient(linear, left top, left bottom, color-stop(30%,#1D1A1A), color-stop(90%,#504848));background: -webkit-linear-gradient(top,  #1D1A1A 30%,#504848 90%);background: -o-linear-gradient(top,  #1D1A1A 30%,#504848 90%);background: -ms-linear-gradient(top,  #1D1A1A 30%,#504848 90%);background: linear-gradient(#1D1A1A 30%, #504848 90%);color: #FFFFFF;}.stb-custom-body_box {background: #F7CDF5;filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#F7CDF5', endColorstr='#F77DF1',GradientType=0 );background: -moz-linear-gradient(top,  #F7CDF5 30%, #F77DF1 90%);background: -webkit-gradient(linear, left top, left bottom, color-stop(30%,#F7CDF5), color-stop(90%,#F77DF1));background: -webkit-linear-gradient(top,  #F7CDF5 30%,#F77DF1 90%);background: -o-linear-gradient(top,  #F7CDF5 30%,#F77DF1 90%);background: -ms-linear-gradient(top,  #F7CDF5 30%,#F77DF1 90%);background: linear-gradient(#F7CDF5 30%, #F77DF1 90%);color: #000000;}.stb-border.stb-download-container {border: 1px none #65ADFE;}.stb-side.stb-download-container {background: #1D1A1A;filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1D1A1A', endColorstr='#504848',GradientType=0 );background: -moz-linear-gradient(top,  #1D1A1A 30%, #504848 90%);background: -webkit-gradient(linear, left top, left bottom, color-stop(30%,#1D1A1A), color-stop(90%,#504848));background: -webkit-linear-gradient(top,  #1D1A1A 30%,#504848 90%);background: -o-linear-gradient(top,  #1D1A1A 30%,#504848 90%);background: -ms-linear-gradient(top,  #1D1A1A 30%,#504848 90%);background: linear-gradient(#1D1A1A 30%, #504848 90%);}.stb-side-none.stb-download-container {background: #78C0F7;filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#78C0F7', endColorstr='#2E7CB9',GradientType=0 );background: -moz-linear-gradient(top,  #78C0F7 30%, #2E7CB9 90%);background: -webkit-gradient(linear, left top, left bottom, color-stop(30%,#78C0F7), color-stop(90%,#2E7CB9));background: -webkit-linear-gradient(top,  #78C0F7 30%,#2E7CB9 90%);background: -o-linear-gradient(top,  #78C0F7 30%,#2E7CB9 90%);background: -ms-linear-gradient(top,  #78C0F7 30%,#2E7CB9 90%);background: linear-gradient(#78C0F7 30%, #2E7CB9 90%);}.stb-download_box {background: #78C0F7;filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#78C0F7', endColorstr='#2E7CB9',GradientType=0 );background: -moz-linear-gradient(top,  #78C0F7 30%, #2E7CB9 90%);background: -webkit-gradient(linear, left top, left bottom, color-stop(30%,#78C0F7), color-stop(90%,#2E7CB9));background: -webkit-linear-gradient(top,  #78C0F7 30%,#2E7CB9 90%);background: -o-linear-gradient(top,  #78C0F7 30%,#2E7CB9 90%);background: -ms-linear-gradient(top,  #78C0F7 30%,#2E7CB9 90%);background: linear-gradient(#78C0F7 30%, #2E7CB9 90%);color: #000000;}.stb-download-caption_box {background: #1D1A1A;background: -moz-linear-gradient(top,  #1D1A1A 30%, #504848 90%);background: -webkit-gradient(linear, left top, left bottom, color-stop(30%,#1D1A1A), color-stop(90%,#504848));background: -webkit-linear-gradient(top,  #1D1A1A 30%,#504848 90%);background: -o-linear-gradient(top,  #1D1A1A 30%,#504848 90%);background: -ms-linear-gradient(top,  #1D1A1A 30%,#504848 90%);background: linear-gradient(#1D1A1A 30%, #504848 90%);color: #FFFFFF;}.stb-download-body_box {background: #78C0F7;filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#78C0F7', endColorstr='#2E7CB9',GradientType=0 );background: -moz-linear-gradient(top,  #78C0F7 30%, #2E7CB9 90%);background: -webkit-gradient(linear, left top, left bottom, color-stop(30%,#78C0F7), color-stop(90%,#2E7CB9));background: -webkit-linear-gradient(top,  #78C0F7 30%,#2E7CB9 90%);background: -o-linear-gradient(top,  #78C0F7 30%,#2E7CB9 90%);background: -ms-linear-gradient(top,  #78C0F7 30%,#2E7CB9 90%);background: linear-gradient(#78C0F7 30%, #2E7CB9 90%);color: #000000;}.stb-border.stb-grey-container {border: 1px none #BBBBBB;}.stb-side.stb-grey-container {background: #B5B5B5;filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#B5B5B5', endColorstr='#6E6E6E',GradientType=0 );background: -moz-linear-gradient(top,  #B5B5B5 30%, #6E6E6E 90%);background: -webkit-gradient(linear, left top, left bottom, color-stop(30%,#B5B5B5), color-stop(90%,#6E6E6E));background: -webkit-linear-gradient(top,  #B5B5B5 30%,#6E6E6E 90%);background: -o-linear-gradient(top,  #B5B5B5 30%,#6E6E6E 90%);background: -ms-linear-gradient(top,  #B5B5B5 30%,#6E6E6E 90%);background: linear-gradient(#B5B5B5 30%, #6E6E6E 90%);}.stb-side-none.stb-grey-container {background: #E3E3E3;filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#E3E3E3', endColorstr='#ABABAB',GradientType=0 );background: -moz-linear-gradient(top,  #E3E3E3 30%, #ABABAB 90%);background: -webkit-gradient(linear, left top, left bottom, color-stop(30%,#E3E3E3), color-stop(90%,#ABABAB));background: -webkit-linear-gradient(top,  #E3E3E3 30%,#ABABAB 90%);background: -o-linear-gradient(top,  #E3E3E3 30%,#ABABAB 90%);background: -ms-linear-gradient(top,  #E3E3E3 30%,#ABABAB 90%);background: linear-gradient(#E3E3E3 30%, #ABABAB 90%);}.stb-grey_box {background: #E3E3E3;filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#E3E3E3', endColorstr='#ABABAB',GradientType=0 );background: -moz-linear-gradient(top,  #E3E3E3 30%, #ABABAB 90%);background: -webkit-gradient(linear, left top, left bottom, color-stop(30%,#E3E3E3), color-stop(90%,#ABABAB));background: -webkit-linear-gradient(top,  #E3E3E3 30%,#ABABAB 90%);background: -o-linear-gradient(top,  #E3E3E3 30%,#ABABAB 90%);background: -ms-linear-gradient(top,  #E3E3E3 30%,#ABABAB 90%);background: linear-gradient(#E3E3E3 30%, #ABABAB 90%);color: #000000;}.stb-grey-caption_box {background: #B5B5B5;background: -moz-linear-gradient(top,  #B5B5B5 30%, #6E6E6E 90%);background: -webkit-gradient(linear, left top, left bottom, color-stop(30%,#B5B5B5), color-stop(90%,#6E6E6E));background: -webkit-linear-gradient(top,  #B5B5B5 30%,#6E6E6E 90%);background: -o-linear-gradient(top,  #B5B5B5 30%,#6E6E6E 90%);background: -ms-linear-gradient(top,  #B5B5B5 30%,#6E6E6E 90%);background: linear-gradient(#B5B5B5 30%, #6E6E6E 90%);color: #FFFFFF;}.stb-grey-body_box {background: #E3E3E3;filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#E3E3E3', endColorstr='#ABABAB',GradientType=0 );background: -moz-linear-gradient(top,  #E3E3E3 30%, #ABABAB 90%);background: -webkit-gradient(linear, left top, left bottom, color-stop(30%,#E3E3E3), color-stop(90%,#ABABAB));background: -webkit-linear-gradient(top,  #E3E3E3 30%,#ABABAB 90%);background: -o-linear-gradient(top,  #E3E3E3 30%,#ABABAB 90%);background: -ms-linear-gradient(top,  #E3E3E3 30%,#ABABAB 90%);background: linear-gradient(#E3E3E3 30%, #ABABAB 90%);color: #000000;}.stb-border.stb-info-container {border: 1px none #7AD975;}.stb-side.stb-info-container {background: #1D1A1A;filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1D1A1A', endColorstr='#504848',GradientType=0 );background: -moz-linear-gradient(top,  #1D1A1A 30%, #504848 90%);background: -webkit-gradient(linear, left top, left bottom, color-stop(30%,#1D1A1A), color-stop(90%,#504848));background: -webkit-linear-gradient(top,  #1D1A1A 30%,#504848 90%);background: -o-linear-gradient(top,  #1D1A1A 30%,#504848 90%);background: -ms-linear-gradient(top,  #1D1A1A 30%,#504848 90%);background: linear-gradient(#1D1A1A 30%, #504848 90%);}.stb-side-none.stb-info-container {background: #A1EA94;filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#A1EA94', endColorstr='#79B06E',GradientType=0 );background: -moz-linear-gradient(top,  #A1EA94 30%, #79B06E 90%);background: -webkit-gradient(linear, left top, left bottom, color-stop(30%,#A1EA94), color-stop(90%,#79B06E));background: -webkit-linear-gradient(top,  #A1EA94 30%,#79B06E 90%);background: -o-linear-gradient(top,  #A1EA94 30%,#79B06E 90%);background: -ms-linear-gradient(top,  #A1EA94 30%,#79B06E 90%);background: linear-gradient(#A1EA94 30%, #79B06E 90%);}.stb-info_box {background: #A1EA94;filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#A1EA94', endColorstr='#79B06E',GradientType=0 );background: -moz-linear-gradient(top,  #A1EA94 30%, #79B06E 90%);background: -webkit-gradient(linear, left top, left bottom, color-stop(30%,#A1EA94), color-stop(90%,#79B06E));background: -webkit-linear-gradient(top,  #A1EA94 30%,#79B06E 90%);background: -o-linear-gradient(top,  #A1EA94 30%,#79B06E 90%);background: -ms-linear-gradient(top,  #A1EA94 30%,#79B06E 90%);background: linear-gradient(#A1EA94 30%, #79B06E 90%);color: #000000;}.stb-info-caption_box {background: #1D1A1A;background: -moz-linear-gradient(top,  #1D1A1A 30%, #504848 90%);background: -webkit-gradient(linear, left top, left bottom, color-stop(30%,#1D1A1A), color-stop(90%,#504848));background: -webkit-linear-gradient(top,  #1D1A1A 30%,#504848 90%);background: -o-linear-gradient(top,  #1D1A1A 30%,#504848 90%);background: -ms-linear-gradient(top,  #1D1A1A 30%,#504848 90%);background: linear-gradient(#1D1A1A 30%, #504848 90%);color: #FFFFFF;}.stb-info-body_box {background: #A1EA94;filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#A1EA94', endColorstr='#79B06E',GradientType=0 );background: -moz-linear-gradient(top,  #A1EA94 30%, #79B06E 90%);background: -webkit-gradient(linear, left top, left bottom, color-stop(30%,#A1EA94), color-stop(90%,#79B06E));background: -webkit-linear-gradient(top,  #A1EA94 30%,#79B06E 90%);background: -o-linear-gradient(top,  #A1EA94 30%,#79B06E 90%);background: -ms-linear-gradient(top,  #A1EA94 30%,#79B06E 90%);background: linear-gradient(#A1EA94 30%, #79B06E 90%);color: #000000;}.stb-border.stb-warning-container {border: 1px none #FE9A05;}.stb-side.stb-warning-container {background: #1D1A1A;filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1D1A1A', endColorstr='#504848',GradientType=0 );background: -moz-linear-gradient(top,  #1D1A1A 30%, #504848 90%);background: -webkit-gradient(linear, left top, left bottom, color-stop(30%,#1D1A1A), color-stop(90%,#504848));background: -webkit-linear-gradient(top,  #1D1A1A 30%,#504848 90%);background: -o-linear-gradient(top,  #1D1A1A 30%,#504848 90%);background: -ms-linear-gradient(top,  #1D1A1A 30%,#504848 90%);background: linear-gradient(#1D1A1A 30%, #504848 90%);}.stb-side-none.stb-warning-container {background: #F8FC91;filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#F8FC91', endColorstr='#F0D208',GradientType=0 );background: -moz-linear-gradient(top,  #F8FC91 30%, #F0D208 90%);background: -webkit-gradient(linear, left top, left bottom, color-stop(30%,#F8FC91), color-stop(90%,#F0D208));background: -webkit-linear-gradient(top,  #F8FC91 30%,#F0D208 90%);background: -o-linear-gradient(top,  #F8FC91 30%,#F0D208 90%);background: -ms-linear-gradient(top,  #F8FC91 30%,#F0D208 90%);background: linear-gradient(#F8FC91 30%, #F0D208 90%);}.stb-warning_box {background: #F8FC91;filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#F8FC91', endColorstr='#F0D208',GradientType=0 );background: -moz-linear-gradient(top,  #F8FC91 30%, #F0D208 90%);background: -webkit-gradient(linear, left top, left bottom, color-stop(30%,#F8FC91), color-stop(90%,#F0D208));background: -webkit-linear-gradient(top,  #F8FC91 30%,#F0D208 90%);background: -o-linear-gradient(top,  #F8FC91 30%,#F0D208 90%);background: -ms-linear-gradient(top,  #F8FC91 30%,#F0D208 90%);background: linear-gradient(#F8FC91 30%, #F0D208 90%);color: #000000;}.stb-warning-caption_box {background: #1D1A1A;background: -moz-linear-gradient(top,  #1D1A1A 30%, #504848 90%);background: -webkit-gradient(linear, left top, left bottom, color-stop(30%,#1D1A1A), color-stop(90%,#504848));background: -webkit-linear-gradient(top,  #1D1A1A 30%,#504848 90%);background: -o-linear-gradient(top,  #1D1A1A 30%,#504848 90%);background: -ms-linear-gradient(top,  #1D1A1A 30%,#504848 90%);background: linear-gradient(#1D1A1A 30%, #504848 90%);color: #FFFFFF;}.stb-warning-body_box {background: #F8FC91;filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#F8FC91', endColorstr='#F0D208',GradientType=0 );background: -moz-linear-gradient(top,  #F8FC91 30%, #F0D208 90%);background: -webkit-gradient(linear, left top, left bottom, color-stop(30%,#F8FC91), color-stop(90%,#F0D208));background: -webkit-linear-gradient(top,  #F8FC91 30%,#F0D208 90%);background: -o-linear-gradient(top,  #F8FC91 30%,#F0D208 90%);background: -ms-linear-gradient(top,  #F8FC91 30%,#F0D208 90%);background: linear-gradient(#F8FC91 30%, #F0D208 90%);color: #000000;}</style>
+<link rel='dns-prefetch' href='http://fonts.googleapis.com' />
+<link rel='dns-prefetch' href='http://s.w.org' />
+<link href='https://fonts.gstatic.com' crossorigin rel='preconnect' />
+<link rel="alternate" type="application/rss+xml" title="Pauls Python Programmering &raquo; Feed" href="../../feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="Pauls Python Programmering &raquo; Comments Feed" href="../../comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="Pauls Python Programmering &raquo; P1 &#8211; Kapitel 2 Comments Feed" href="feed/index.html" />
+<!-- This site uses the Google Analytics by MonsterInsights plugin v7.0.4 - Using Analytics tracking - https://www.monsterinsights.com/ -->
+<script type="text/javascript" data-cfasync="false">
+	var mi_track_user = true;
+	var disableStr = 'ga-disable-UA-97530036-1';
+
+	/* Function to detect opted out users */
+	function __gaTrackerIsOptedOut() {
+		return document.cookie.indexOf(disableStr + '=true') > -1;
+	}
+
+	/* Disable tracking if the opt-out cookie exists. */
+	if ( __gaTrackerIsOptedOut() ) {
+		window[disableStr] = true;
+	}
+
+	/* Opt-out function */
+	function __gaTrackerOptout() {
+	  document.cookie = disableStr + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+	  window[disableStr] = true;
+	}
+	
+	if ( mi_track_user ) {
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','__gaTracker');
+
+		__gaTracker('create', 'UA-97530036-1', 'auto');
+		__gaTracker('set', 'forceSSL', true);
+		__gaTracker('require', 'displayfeatures');
+		__gaTracker('require', 'linkid', 'linkid.js');
+		__gaTracker('send','pageview');
+	} else {
+		console.log( "" );
+		(function() {
+			/* https://developers.google.com/analytics/devguides/collection/analyticsjs/ */
+			var noopfn = function() {
+				return null;
+			};
+			var noopnullfn = function() {
+				return null;
+			};
+			var Tracker = function() {
+				return null;
+			};
+			var p = Tracker.prototype;
+			p.get = noopfn;
+			p.set = noopfn;
+			p.send = noopfn;
+			var __gaTracker = function() {
+				var len = arguments.length;
+				if ( len === 0 ) {
+					return;
+				}
+				var f = arguments[len-1];
+				if ( typeof f !== 'object' || f === null || typeof f.hitCallback !== 'function' ) {
+					console.log( 'Not running function __gaTracker(' + arguments[0] + " ....) because you\'re not being tracked. ");
+					return;
+				}
+				try {
+					f.hitCallback();
+				} catch (ex) {
+
+				}
+			};
+			__gaTracker.create = function() {
+				return new Tracker();
+			};
+			__gaTracker.getByName = noopnullfn;
+			__gaTracker.getAll = function() {
+				return [];
+			};
+			__gaTracker.remove = noopfn;
+			window['__gaTracker'] = __gaTracker;
+		})();
+		}
+</script>
+<!-- / Google Analytics by MonsterInsights -->
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/paubel.se\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.9"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='generate-fonts-css'  href='http://fonts.googleapis.com/css?family=Open+Sans:300,300italic,regular,italic,600,600italic,700,700italic,800,800italic' type='text/css' media='all' />
+<link rel='stylesheet' id='contact-form-7-css'  href='../../wp-content/plugins/contact-form-7/includes/css/styles-ver=5.0.css' type='text/css' media='all' />
+<link rel='stylesheet' id='storefront-jetpack-css'  href='../../wp-content/plugins/storefront-jetpack/public/css/sfjp-public-ver=1.0.0.css' type='text/css' media='all' />
+<link rel='stylesheet' id='toc-screen-css'  href='../../wp-content/plugins/table-of-contents-plus/screen.min-ver=1509.css' type='text/css' media='all' />
+<link rel='stylesheet' id='woocommerce-layout-css'  href='../../wp-content/plugins/woocommerce/assets/css/woocommerce-layout-ver=3.2.1.css' type='text/css' media='all' />
+<link rel='stylesheet' id='woocommerce-smallscreen-css'  href='../../wp-content/plugins/woocommerce/assets/css/woocommerce-smallscreen-ver=3.2.1.css' type='text/css' media='only screen and (max-width: 768px)' />
+<link rel='stylesheet' id='woocommerce-general-css'  href='../../wp-content/plugins/woocommerce/assets/css/woocommerce-ver=3.2.1.css' type='text/css' media='all' />
+<style id='woocommerce-general-inline-css' type='text/css'>
+.woocommerce .page-header-image-single {display: none;}.woocommerce .entry-content,.woocommerce .product .entry-summary {margin-top: 0;}.related.products {clear: both;}.checkout-subscribe-prompt.clear {visibility: visible;height: initial;width: initial;}@media (max-width:768px) {.woocommerce .woocommerce-ordering,.woocommerce-page .woocommerce-ordering {float: none;}.woocommerce .woocommerce-ordering select {max-width: 100%;}.woocommerce ul.products li.product,.woocommerce-page ul.products li.product,.woocommerce-page[class*=columns-] ul.products li.product,.woocommerce[class*=columns-] ul.products li.product {width: 100%;float: none;}}
+</style>
+<link rel='stylesheet' id='wpProQuiz_front_style-css'  href='../../wp-content/plugins/wp-pro-quiz/css/wpProQuiz_front.min-ver=0.37.css' type='text/css' media='all' />
+<link rel='stylesheet' id='generate-style-grid-css'  href='../../wp-content/themes/generatepress/css/unsemantic-grid.min-ver=2.0.2.css' type='text/css' media='all' />
+<link rel='stylesheet' id='generate-style-css'  href='../../wp-content/themes/generatepress/style.min-ver=2.0.2.css' type='text/css' media='all' />
+<style id='generate-style-inline-css' type='text/css'>
+body{background-color:#efefef;color:#3a3a3a;}a, a:visited{color:#1e73be;text-decoration:none;}a:hover, a:focus, a:active{color:#000000;text-decoration:none;}body .grid-container{max-width:1100px;}body, button, input, select, textarea{font-family:"Open Sans", sans-serif;}.main-navigation .main-nav ul ul li a{font-size:14px;}@media (max-width:768px){.main-title{font-size:30px;}h1{font-size:30px;}h2{font-size:25px;}}.top-bar{background-color:#636363;color:#ffffff;}.top-bar a,.top-bar a:visited{color:#ffffff;}.top-bar a:hover{color:#303030;}.site-header{background-color:#ffffff;color:#3a3a3a;}.site-header a,.site-header a:visited{color:#3a3a3a;}.main-title a,.main-title a:hover,.main-title a:visited{color:#222222;}.site-description{color:#999999;}.main-navigation,.main-navigation ul ul{background-color:#222222;}.main-navigation .main-nav ul li a,.menu-toggle{color:#ffffff;}.main-navigation .main-nav ul li:hover > a,.main-navigation .main-nav ul li:focus > a, .main-navigation .main-nav ul li.sfHover > a{color:#ffffff;background-color:#3f3f3f;}button.menu-toggle:hover,button.menu-toggle:focus,.main-navigation .mobile-bar-items a,.main-navigation .mobile-bar-items a:hover,.main-navigation .mobile-bar-items a:focus{color:#ffffff;}.main-navigation .main-nav ul li[class*="current-menu-"] > a{color:#ffffff;background-color:#3f3f3f;}.main-navigation .main-nav ul li[class*="current-menu-"] > a:hover,.main-navigation .main-nav ul li[class*="current-menu-"].sfHover > a{color:#ffffff;background-color:#3f3f3f;}.navigation-search input[type="search"],.navigation-search input[type="search"]:active{color:#3f3f3f;background-color:#3f3f3f;}.navigation-search input[type="search"]:focus{color:#ffffff;background-color:#3f3f3f;}.main-navigation ul ul{background-color:#3f3f3f;}.main-navigation .main-nav ul ul li a{color:#ffffff;}.main-navigation .main-nav ul ul li:hover > a,.main-navigation .main-nav ul ul li:focus > a,.main-navigation .main-nav ul ul li.sfHover > a{color:#ffffff;background-color:#4f4f4f;}.main-navigation .main-nav ul ul li[class*="current-menu-"] > a{color:#ffffff;background-color:#4f4f4f;}.main-navigation .main-nav ul ul li[class*="current-menu-"] > a:hover,.main-navigation .main-nav ul ul li[class*="current-menu-"].sfHover > a{color:#ffffff;background-color:#4f4f4f;}.separate-containers .inside-article, .separate-containers .comments-area, .separate-containers .page-header, .one-container .container, .separate-containers .paging-navigation, .inside-page-header{background-color:#ffffff;}.entry-meta{color:#888888;}.entry-meta a,.entry-meta a:visited{color:#666666;}.entry-meta a:hover{color:#1e73be;}.sidebar .widget{background-color:#ffffff;}.sidebar .widget .widget-title{color:#000000;}.footer-widgets{background-color:#ffffff;}.footer-widgets .widget-title{color:#000000;}.site-info{color:#ffffff;background-color:#222222;}.site-info a,.site-info a:visited{color:#ffffff;}.site-info a:hover{color:#606060;}.footer-bar .widget_nav_menu .current-menu-item a{color:#606060;}input[type="text"],input[type="email"],input[type="url"],input[type="password"],input[type="search"],input[type="tel"],input[type="number"],textarea,select{color:#666666;background-color:#fafafa;border-color:#cccccc;}input[type="text"]:focus,input[type="email"]:focus,input[type="url"]:focus,input[type="password"]:focus,input[type="search"]:focus,input[type="tel"]:focus,input[type="number"]:focus,textarea:focus,select:focus{color:#666666;background-color:#ffffff;border-color:#bfbfbf;}button,html input[type="button"],input[type="reset"],input[type="submit"],a.button,a.button:visited{color:#ffffff;background-color:#666666;}button:hover,html input[type="button"]:hover,input[type="reset"]:hover,input[type="submit"]:hover,a.button:hover,button:focus,html input[type="button"]:focus,input[type="reset"]:focus,input[type="submit"]:focus,a.button:focus{color:#ffffff;background-color:#3f3f3f;}.generate-back-to-top,.generate-back-to-top:visited{background-color:rgba( 0,0,0,0.4 );color:#ffffff;}.generate-back-to-top:hover,.generate-back-to-top:focus{background-color:rgba( 0,0,0,0.6 );color:#ffffff;}@media (max-width:768px){.separate-containers .inside-article, .separate-containers .comments-area, .separate-containers .page-header, .separate-containers .paging-navigation, .one-container .site-content, .inside-page-header{padding:30px;}}.main-navigation ul ul{top:auto;}.navigation-search, .navigation-search input{height:100%;}.rtl .menu-item-has-children .dropdown-menu-toggle{padding-left:20px;}.rtl .main-navigation .main-nav ul li.menu-item-has-children > a{padding-right:20px;}.one-container .sidebar .widget{padding:0px;}
+</style>
+<link rel='stylesheet' id='generate-mobile-style-css'  href='../../wp-content/themes/generatepress/css/mobile.min-ver=2.0.2.css' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome-css'  href='../../wp-content/themes/generatepress/css/font-awesome.min-ver=4.7.css' type='text/css' media='all' />
+<link rel='stylesheet' id='tablepress-default-css'  href='../../wp-content/plugins/tablepress/css/default.min-ver=1.9.css' type='text/css' media='all' />
+<link rel='stylesheet' id='um_minified-css'  href='../../wp-content/plugins/ultimate-member/assets/css/um.min-ver=1.3.88.css' type='text/css' media='all' />
+<link rel='stylesheet' id='stbCoreCSS-css'  href='../../wp-content/plugins/wp-special-textboxes/css/stb-core-ver=5.9.107.css' type='text/css' media='all' />
+<script type='text/javascript'>
+/* <![CDATA[ */
+var monsterinsights_frontend = {"js_events_tracking":"true","is_debug_mode":"false","download_extensions":"doc,exe,js,pdf,ppt,tgz,zip,xls","inbound_paths":"","home_url":"http:\/\/paubel.se","track_download_as":"event","internal_label":"int","hash_tracking":"false"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='../../wp-content/plugins/google-analytics-for-wordpress/assets/js/frontend.min-ver=7.0.4.js'></script>
+<script type='text/javascript' src='../../wp-includes/js/jquery/jquery-ver=1.12.4.js'></script>
+<script type='text/javascript' src='../../wp-includes/js/jquery/jquery-migrate.min-ver=1.4.1.js'></script>
+<script type='text/javascript' src='../../wp-content/plugins/sticky-menu-or-anything-on-scroll/assets/js/jq-sticky-anything.min-ver=2.1.1.js'></script>
+<script type='text/javascript' src='../../wp-content/plugins/storefront-jetpack/public/js/sfjp-public-ver=1.0.0.js'></script>
+<link rel='https://api.w.org/' href='../../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://paubel.se/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.9" />
+<meta name="generator" content="WooCommerce 3.2.1" />
+<link rel='shortlink' href='index.html' />
+<link rel="alternate" type="application/json+oembed" href="../../wp-json/oembed/1.0/embed-url=http_%7C%7Cpaubel.se%7Cprogrammering-1%7Ckapitel-2%7C.json" />
+<link rel="alternate" type="text/xml+oembed" href="../../wp-json/oembed/1.0/embed-url=http_%7C%7Cpaubel.se%7Cprogrammering-1%7Ckapitel-2%7C&format=xml.xml" />
+<meta name="viewport" content="width=device-width, initial-scale=1">	<noscript><style>.woocommerce-product-gallery{ opacity: 1 !important; }</style></noscript>
+	 
+		<script type="text/javascript">
+
+		var ultimatemember_image_upload_url = 'http://paubel.se/wp-content/plugins/ultimate-member/core/lib/upload/um-image-upload.php';
+		var ultimatemember_file_upload_url = 'http://paubel.se/wp-content/plugins/ultimate-member/core/lib/upload/um-file-upload.php';
+		var ultimatemember_ajax_url = 'http://paubel.se/wp-admin/admin-ajax.php';
+
+		</script>
+
+	
+		<style type="text/css">.request_name { display: none !important; }</style>
+
+	<style type="text/css" id="syntaxhighlighteranchor"></style>
+<link rel="icon" href="../../wp-content/uploads/2017/08/cropped-python-7be70baaac-32x32.png" sizes="32x32" />
+<link rel="icon" href="../../wp-content/uploads/2017/08/cropped-python-7be70baaac-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="../../wp-content/uploads/2017/08/cropped-python-7be70baaac-180x180.png" />
+<meta name="msapplication-TileImage" content="http://paubel.se/wp-content/uploads/2017/08/cropped-python-7be70baaac-270x270.png" />
+<style>
+@media screen and (min-width: 768px) {
+.menu-main-container, #menu-main { display: inline-block; }
+#site-navigation {
+	float: none; width: auto; display: inline-block; margin-right: 0; padding-top: 0.5em; 
+}
+.main-navigation ul.menu > li > a, .main-navigation ul.nav-menu > li > a {
+	padding-bottom: 0;
+}
+.site-header-cart .cart-contents {
+	padding-bottom: 0;
+}
+.woocommerce-active .site-header .site-header-cart {
+	float: none; display: inline-block;
+}
+.woocommerce-active .site-header .site-header-cart .cart-contents {
+	height: 1em;
+}
+#masthead > .col-full > .site-logo-link { padding-bottom: 2.224em; }
+}
+</style>
+</head>
+
+<body itemtype='http://schema.org/WebPage' itemscope='itemscope' class="page-template-default page page-id-11 page-child parent-pageid-6 wp-custom-logo  right-sidebar nav-below-header fluid-header separate-containers active-footer-widgets-0 nav-aligned-left header-aligned-left dropdown-hover">
+	<a class="screen-reader-text skip-link" href="index.html#content" title="Skip to content">Skip to content</a>		<header itemtype="http://schema.org/WPHeader" itemscope="itemscope" id="masthead" class="site-header">
+			<div class="inside-header grid-container grid-parent">
+							<div class="header-widget">
+				<aside id="search-3" class="widget inner-padding widget_search"><form method="get" class="search-form" action="http://paubel.se/">
+	<label>
+		<span class="screen-reader-text">Search for:</span>
+		<input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s" title="Search for:">
+	</label>
+	<input type="submit" class="search-submit" value="Search">
+</form>
+</aside>			</div>
+		<div class="site-branding">
+					<p class="main-title" itemprop="headline">
+				<a href="../../index.html" rel="home">
+					Pauls Python Programmering
+				</a>
+			</p>
+					<p class="site-description">
+				Paul Belfrage
+			</p>
+				</div><div class="site-logo">
+				<a href="../../index.html" title="Pauls Python Programmering" rel="home">
+					<img  class="header-image" alt="Pauls Python Programmering" src="../../wp-content/uploads/2017/08/cropped-cropped-snake-2.jpg" title="Pauls Python Programmering" />
+				</a>
+			</div>			</div><!-- .inside-header -->
+		</header><!-- #masthead -->
+				<nav itemtype="http://schema.org/SiteNavigationElement" itemscope="itemscope" id="site-navigation" class="main-navigation">
+			<div class="inside-navigation grid-container grid-parent">
+								<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+										<span class="mobile-menu">Menu</span>
+				</button>
+				<div id="primary-menu" class="main-nav"><ul id="menu-right" class=" menu sf-menu"><li id="menu-item-62" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-page-ancestor current-menu-ancestor current-menu-parent current-page-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-62"><a href="../../index.html">Programmering 1<span role="button" class="dropdown-menu-toggle" aria-expanded="false" tabindex="-1"></span></a>
+<ul class="sub-menu">
+	<li id="menu-item-63" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-63"><a href="../kapitel-1/index.html">P1 – Kapitel 1</a></li>
+	<li id="menu-item-64" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-11 current_page_item menu-item-64"><a href="index.html">P1 – Kapitel 2</a></li>
+	<li id="menu-item-151" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-151"><a href="../kapitel-3/index.html">P1 – Kapitel 3</a></li>
+	<li id="menu-item-309" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-309"><a href="../kapitel-4/index.html">P1 – Kapitel 4</a></li>
+	<li id="menu-item-308" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-308"><a href="../kapitel-5/index.html">P1 – Kapitel 5</a></li>
+	<li id="menu-item-653" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-653"><a href="../kapitel-6/index.html">P1 – Kapitel 6</a></li>
+	<li id="menu-item-655" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-655"><a href="../kapitel-7/index.html">P1 – Kapitel 7</a></li>
+	<li id="menu-item-658" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-658"><a href="../p1-kapitel-8/index.html">P1 – Kapitel 8</a></li>
+</ul>
+</li>
+<li id="menu-item-475" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-475"><a href="../../om-mig/index.html">Om mig</a></li>
+<li id="menu-item-690" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-690"><a href="../../blogg/index.html">Blogg</a></li>
+<li id="menu-item-684" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-684"><a href="../../tack/index.html">Tack</a></li>
+</ul></div>			</div><!-- .inside-navigation -->
+		</nav><!-- #site-navigation -->
+		
+	<div id="page" class="hfeed site grid-container container grid-parent">
+		<div id="content" class="site-content">
+			
+	<div id="primary" class="content-area grid-parent mobile-grid-100 grid-75 tablet-grid-75">
+		<main id="main" class="site-main">
+			
+<article id="post-11" class="post-11 page type-page status-publish" itemtype='http://schema.org/CreativeWork' itemscope='itemscope'>
+	<div class="inside-article">
+		
+			<header class="entry-header">
+				<h1 class="entry-title" itemprop="headline">P1 &#8211; Kapitel 2</h1>			</header><!-- .entry-header -->
+
+		
+		<div class="entry-content" itemprop="text">
+			<div id="toc_container" class="toc_light_blue no_bullets"><p class="toc_title">Contents</p><ul class="toc_list"><li><a href="index.html#Oversattning"><span class="toc_number toc_depth_1">1</span> Översättning</a></li><li><a href="index.html#Syntaxfel"><span class="toc_number toc_depth_1">2</span> Syntaxfel</a></li><li><a href="index.html#Variabler"><span class="toc_number toc_depth_1">3</span> Variabler</a><ul><li><ul><li><a href="index.html#Ovning_21"><span class="toc_number toc_depth_3">3.0.1</span> Övning 2.1</a></li></ul></li><li><a href="index.html#Syntax_Highlighting"><span class="toc_number toc_depth_2">3.1</span> Syntax Highlighting</a></li><li><a href="index.html#Att_valja_variabelnamn"><span class="toc_number toc_depth_2">3.2</span> Att välja variabelnamn</a></li></ul></li><li><a href="index.html#Tal_och_andra_datatyper"><span class="toc_number toc_depth_1">4</span> Tal och andra datatyper</a><ul><li><a href="index.html#Operatorer"><span class="toc_number toc_depth_2">4.1</span> Operatorer</a></li><li><a href="index.html#Forkortat_skrivsatt"><span class="toc_number toc_depth_2">4.2</span> Förkortat skrivsätt</a><ul><li><a href="index.html#Ovning_22"><span class="toc_number toc_depth_3">4.2.1</span> Övning 2.2</a></li><li><a href="index.html#Ovning_23"><span class="toc_number toc_depth_3">4.2.2</span> Övning 2.3</a></li></ul></li><li><a href="index.html#Kommentarer"><span class="toc_number toc_depth_2">4.3</span> Kommentarer</a></li><li><a href="index.html#Strangar"><span class="toc_number toc_depth_2">4.4</span> Strängar</a><ul><li><a href="index.html#Escapesekvenser"><span class="toc_number toc_depth_3">4.4.1</span> Escapesekvenser</a></li><li><a href="index.html#Mata_in_data_till_ett_program"><span class="toc_number toc_depth_3">4.4.2</span> Mata in data till ett program</a></li><li><a href="index.html#Ovning_24"><span class="toc_number toc_depth_3">4.4.3</span> Övning 2.4</a></li></ul></li><li><a href="index.html#Programmering_1_8211_Kapitel_2"><span class="toc_number toc_depth_2">4.5</span> Programmering 1 &#8211; Kapitel 2</a></li></ul></li></ul></div>
+<h1><span id="Oversattning">Översättning</span></h1>
+<p>Vissa programmeringstermer har etablerade svenska termer. Variable på engelska är variabel på svenska. När självklara översättningar saknas väljer jag att översätta termerna med termer som liknar de engelska eller sådana saknas behåller det engelska termen.</p>
+<h1><span id="Syntaxfel">Syntaxfel</span></h1>
+<p>Alla gör vi fel när vi programmerar. Ett sätt att minska risken för fel eller att lättare hitta fel är att göra medvetet fel i koden du skriver och sedan kontrollera hur Python reagerar.</p>
+<div>Skriv <code>prin('Hello')</code> och kör programmet. Jag får detta fel:</div>
+<div></div>
+<div><div id='stb-container-2785' class='stb-container-css stb-grey-container stb-caption stb-collapsible stb-visible stb-image-big stb-ltr stb-corners stb-shadow'><div id='stb-caption-box-2785' class='stb-grey-caption_box stb_caption stb-caption-box' ><aside class='stb-caption-icon'><img src='../../wp-content/plugins/wp-special-textboxes/themes/stb-dark/gears.png'></aside><span>Utskrift</span><div id="stb-tool-2785" class="stb-tool"><img id="stb-toolimg-2785" src="../../wp-content/plugins/wp-special-textboxes/themes/stb-dark/minus.png" title="Hide" /></div></div><div id='stb-body-box-2785' class='stb-grey-body_box stb_body stb-body-box' ><br />
+Traceback (most recent call last):<br />
+File &#8220;/Users/paul/xxxxxxx/python/Programmering1/hej_varlden.py&#8221;, line 1, in &lt;module&gt;<br />
+prin(&#8216;Hello&#8217;)<br />
+NameError: name &#8216;prin&#8217; is not defined<br />
+</div></div></p>
+<div>Man får reda på vilken rad felet finns på. I detta exemplet stämmer det men vid andra tillfällen kan felet vara på en annan rad. Tänk på att Python tolkar koden som en digital maskin och inte som en människa och reagerar på fel som det är programmerad att göra. Felet jag gjorde kallas ett <b>syntaxfel</b>. Det motsvarar ungefär att man stavar fel när man skriver texter. Tänk på att Python eller PyCharm stavningskontrollerar inte din stavning av vanlig text.</div>
+<div></div>
+<div>
+<div>
+<div>
+<h1><span id="Variabler">Variabler</span></h1>
+<p>En variabel kan liknas vid en låda som Python kan spara värden i.</p>
+<p>Skriv in koden nedan:</p>
+<pre class="brush: python; title: ; notranslate" title="">
+#Raden nedan skriver ut en mening
+meddelande = &quot;Hej. Detta är en mening!&quot;
+print(meddelande)
+</pre>
+<p>Du kunde skrivit print(&#8220;Hej. Detta är en mening!&#8221;) istället. Skillnaden är att vi skapade en variabel som lagrade ett värde nämligen texten &#8220;Hej. Detta är en mening!&#8221;.</p>
+</div>
+</div>
+<div>Fundera på vad som borde bli utskriften när du skriver in dessa raderna</div>
+<div>
+<pre class="brush: python; title: ; notranslate" title="">
+meddelande = &quot;Hej. Detta är en mening!&quot;
+print(meddelande)
+
+meddelande = &quot;Detta är en annan mening!&quot;
+print(meddelande)
+</pre>
+<div id='stb-container-6082' class='stb-container-css stb-grey-container stb-caption stb-collapsible stb-visible stb-image-big stb-ltr stb-corners stb-shadow'><div id='stb-caption-box-6082' class='stb-grey-caption_box stb_caption stb-caption-box' ><aside class='stb-caption-icon'><img src='../../wp-content/plugins/wp-special-textboxes/themes/stb-dark/gears.png'></aside><span>Utskrift</span><div id="stb-tool-6082" class="stb-tool"><img id="stb-toolimg-6082" src="../../wp-content/plugins/wp-special-textboxes/themes/stb-dark/minus.png" title="Hide" /></div></div><div id='stb-body-box-6082' class='stb-grey-body_box stb_body stb-body-box' ><br />
+Hej. Detta är en mening!<br />
+Detta är en annan mening!<br />
+</div></div>
+<div>Variabeln har först värdet &#8220;Hej. Detta är en mening!&#8221; sedan byts innehållet i variabeln till &#8220;Detta är en annan mening!&#8221;</div>
+</div>
+<div></div>
+<div id='stb-container-3656' class='stb-container-css stb-download-container stb-caption stb-collapsible stb-visible stb-image-big stb-ltr stb-corners stb-shadow'><div id='stb-caption-box-3656' class='stb-download-caption_box stb_caption stb-caption-box' ><aside class='stb-caption-icon'><img src='../../wp-content/plugins/wp-special-textboxes/themes/stb-dark/download.png'></aside><span>Övningar</span><div id="stb-tool-3656" class="stb-tool"><img id="stb-toolimg-3656" src="../../wp-content/plugins/wp-special-textboxes/themes/stb-dark/minus.png" title="Hide" /></div></div><div id='stb-body-box-3656' class='stb-download-body_box stb_body stb-body-box' ></p>
+<h3><span id="Ovning_21">Övning 2.1</span></h3>
+<div>Gör ett program som sparar en textsträng i en variabel</div>
+<p></div></div>
+<h2><span id="Syntax_Highlighting">Syntax Highlighting</span></h2>
+<div>För att lättare skilja olika delar av koden åt, färgas olika delar med olika färger. Det underlättar när man kodar eller ska leta efter fel.</div>
+<div>
+<h2><span id="Att_valja_variabelnamn">Att välja variabelnamn</span></h2>
+<div>Använd bara variabelnamn som innehåller bokstäverna a-z och siffrorna 0-9 och understreck _. Du kan börja ett variabelnamn med en bokstav eller understreck men inte med en siffra. Använd inte mellanrum i variabelnamn. Använd inte ord som redan är upptagna av Python som <code>print.</code>En annan sak du bör se upp med är siffran 1, bokstäverna lilla L och stora I. De är lätta att förväxla. Samma sak gäller stora O och siffran 0. Använd enbart små bokstäver. Tänk på att Python tolkar SPAM, sPaM, Spam och spam som fyra olika variabler och det är olämpligt att använda de tre första.</div>
+</div>
+</div>
+</div>
+<div></div>
+<div>Om du ska skriva kod som kommer att vända sig till en större public ska du använda engelska i variabelnamnen. Op dessa sidor använder jag både och eftersom jag siktar på förståelse i första hand och alla kan inte engelska lika bra. Men jag rekommenderar att du plugga engelska för ska du bli en duktig programmerare måste du både läsa mycket dokumentation och skriva koden på engelska.</div>
+<div>
+<pre class="brush: python; title: ; notranslate" title="">
+en_variabel = &quot;Detta är en text&quot;  #OK
+
+variabel_1 = &quot;Detta är en text&quot; #OK
+
+1_variabel = &quot;Detta är en text&quot; #FEL
+
+en variabel = &quot;Detta är en text&quot; #FEL
+
+print = &quot;Detta är en text&quot; #FEL
+
+En_variabel = &quot;Detta är en text&quot; #Olämpligt att använda stora bokstäver i variabelnamn
+
+#Använd variabelnamn som är så korta som möjligt,
+#men beskriver vad som kan lagras i variabeln. 
+
+fornamn_efternamn = &quot;Pelle Person&quot; #Rätt
+
+en_persons_fornamn_ och_efternamn = &quot;Pelle Person&quot; #För långt
+
+namn = &quot;Pelle Person&quot; #Inte tillräckligt förklarande
+
+n = &quot;Pelle Person&quot; #Förklarar inte alls
+</pre>
+<div>
+<h1><span id="Tal_och_andra_datatyper"><span style="color: #000000;">Tal och andra datatyper</span></span></h1>
+<div>I många andra programmeringsspråk måste programmeraren ange vilken typ av variabel som används: heltal, sträng eller decimaltal. Python hanterar detta själv. Decimaltal brukar kallas för flyttal för man kan skriva samma tal på olika sätt 1.23 eller 12.3 * 10<sup>-1</sup> . Eftersom datorer egentligen använder binära tal när det utför själva beräkningen kan det ibland uppstå ett avrundningsfel på sista decimalen. Pröva att skriva in 0.1 + 0.2 i IDLE. Jag får 0.30000000000000004. Detta är inget att bekymra sig om i denna kurs. Anledningen jag tar upp det är att man kan få felet och undra om man gjort något fel. Men det är alltså hur datorer översätter till decimalsystemet som orsakar felet. <a href="http://floating-point-gui.de/basic/">Här kan du läsa mer om felet</a>.</div>
+<div>För er som vill veta hur man kan bestämma antal decimaler som ska synas så kan man skriva så här. 2an i 0:.2f anger hur många decimaler som ska synas. Pröva att skriva talet 12.553721 och sedan talet 12.543721. I det första fallet blir det 12.55 och i det andra fallet blir det 12.54. Pröva olika antal decimaler. För fler sätt att formatera en utskrift gå till <a href="https://pyformat.info/">pyformat.info</a></div>
+<div>
+<pre>print ("{0:.2f}".format(0.1 + 0.2))</pre>
+</div>
+<div>Anledningen till att jag skrev punkt istället för komma är att i de flesta språk använder man amerikans standard. Ibland</div>
+<div><span style="color: #000000;">Variabler kan vara andra typer av textsträngar (på engelska kallas det för &#8216;strings&#8217;). För att lagra ett tal skriver man:</span></div>
+<div>
+<pre class="brush: python; title: ; notranslate" title="">heltal = 4</pre>
+<p>På liknande sätt skriver man decimaltal så här:</p>
+<pre class="brush: python; title: ; notranslate" title="">decimaltal = 5.34</pre>
+<p>Tänk på att använda punkt (.) istället för decimalkomma (,).</p>
+<p>För att summera ett heltal och ett decimaltal och lägga summan i en ny varabel skriver man:</p>
+<pre class="brush: python; title: ; notranslate" title="">summa = heltal + decimaltal</pre>
+<p>Det här sättet att skriva kod skulle ge fel i många andra programmeringsspråk men i Python går det bra. I andra programmeringsspråk kan man inte summera ett heltal och ett decimaltal direkt. När du sätter hashtecken (#) framför kommer Python att ignorera koden när det tolkar.</p>
+<p>Skriv i koden nedan och kalla det tal.py</p>
+<pre class="brush: python; title: ; notranslate" title="">#Variabel som lagrar ett heltal
+heltal = 4
+print(heltal)
+
+#Variabel som lagrar ett decimaltal
+decimaltal = 5.34
+print(decimaltal)
+
+summa = heltal + decimaltal
+print(summa)</pre>
+<p>4<br />
+5.34<br />
+9.34</p>
+<table border="1" cellspacing="0">
+<tbody>
+<tr>
+<td><span style="font-family: arial, sans-serif;">Datatyp</span></td>
+<td><span style="font-family: arial, sans-serif;"> Datatyp (eng)</span></td>
+<td><span style="font-family: arial, sans-serif;"> Exempel</span></td>
+<td><span style="font-family: arial, sans-serif;"> Funktioner vid omvandling </span></td>
+</tr>
+<tr>
+<td><span style="font-family: arial, sans-serif;">int (Heltal)</span></td>
+<td><span style="font-family: arial, sans-serif;"> Integers</span></td>
+<td><span style="font-family: arial, sans-serif;"> &#8230;, -2, -1, 0, 1, 2, 3&#8230;</span></td>
+<td><span style="font-family: arial, sans-serif;"> int()</span></td>
+</tr>
+<tr>
+<td>float (Flyttal)</td>
+<td> Floating-point numbers</td>
+<td> &#8230;, -1.23, -0.234, 0.3, 2,42 &#8230;</td>
+<td> float()</td>
+</tr>
+<tr>
+<td>string  (Strängar)</td>
+<td> Strings</td>
+<td> &#8216;a&#8217;, &#8216;abc, &#8216;abc 123&#8217; &#8216;Hej!&#8217;</td>
+<td> str()</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Ibland vill man kunna omvandla från en datatyp till en annan. Om du skriver någon av omvandlingsfunktionerna och lagrar det i en annan variabel blir den nya variabeln av en annan datayp. Pröva själv i IDLE</p>
+<p>&gt;&gt;&gt; a = 5<br />
+&gt;&gt;&gt; b = float(a)<br />
+&gt;&gt;&gt; b<br />
+5.0<br />
+&gt;&gt;&gt; c = str(a)<br />
+&gt;&gt;&gt; c<br />
+&#8216;5&#8217;<br />
+&gt;&gt;&gt;</p>
+<p>&nbsp;</p>
+<div>
+<div>
+<h2><span id="Operatorer">Operatorer</span></h2>
+<p>5 + 4 kallas för uttryck (eng. expression). Ett uttryck består av värden (5 och 4) (eng. value) och operator (+)</p>
+<table border="1" cellspacing="0">
+<tbody>
+<tr>
+<td> Operator</td>
+<td> Operation</td>
+<td> Exempel</td>
+<td> Blir</td>
+<td> Prioritet</td>
+<td>Förkortat skrivsätt | icke förkortat</td>
+</tr>
+<tr>
+<td> **</td>
+<td> Exponent</td>
+<td> 2 ** 4</td>
+<td> 16</td>
+<td> 1</td>
+<td> a ** = 2 | a = a**2</td>
+</tr>
+<tr>
+<td> %</td>
+<td> Modulus / Rest</td>
+<td>12 % 5</td>
+<td> 2</td>
+<td> 2</td>
+<td> a %= 2  | a = a%2</td>
+</tr>
+<tr>
+<td> //</td>
+<td> Heltals division</td>
+<td> 12 // 5</td>
+<td> 2</td>
+<td> 2</td>
+<td> a //= 2  | a = a**2</td>
+</tr>
+<tr>
+<td> /</td>
+<td> Division</td>
+<td> 12 / 5</td>
+<td> 2.4</td>
+<td> 2</td>
+<td> a /= 2  | a = a/2</td>
+</tr>
+<tr>
+<td> *</td>
+<td> Multiplikation</td>
+<td>  4 * 3</td>
+<td> 12</td>
+<td> 2</td>
+<td> a *= 2  | a = a*2</td>
+</tr>
+<tr>
+<td> &#8211;</td>
+<td> Subtraktion</td>
+<td> 5 &#8211; 3</td>
+<td> 2</td>
+<td> 3</td>
+<td> a -= 2  | a = a-2</td>
+</tr>
+<tr>
+<td> +</td>
+<td> Addition</td>
+<td> 3 + 3</td>
+<td> 6</td>
+<td> 3</td>
+<td> a += 2   | a = a+2</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<p>Precis som i matematik så utförs olika operatorer i olika prioritet och från vänster till höger. Öppna IDLE under Python. I den kan du testa mindre kodstycken utan att lägga dem i en py-fil.<br />
+Prova att skriva in:<br />
+&gt;&gt;&gt; 3 + 2 * 5<br />
+13<br />
+&gt;&gt;&gt; (3 + 2) * 5<br />
+25<br />
+&gt;&gt;&gt; 21/5<br />
+4.2<br />
+&gt;&gt;&gt; 21//5<br />
+4<br />
+&gt;&gt;&gt; 21%5<br />
+1</p>
+<p>Skriv in koden nedan i en ny fil och kalla den operatorer.py. Försök att tänka ut vad svaret blir innan du kör programmet. Gör gärna medvetna fel så du kan förstår hur felmeddelandet blir.</p>
+<pre class="brush: python; title: ; notranslate" title="">
+#Exponent
+tal = 2 ** 4
+print('Basen 2 och exponenten 4 blir',tal)
+
+#Modulus / Rest. Tänk 12/5 = två hela och två femtedelar.
+# Två är vad som blir i täljaren när man
+# gör om bråkform till blandad form
+tal = 12 % 5
+print('12 dividerat på 5 ger resten ',tal))
+
+#Heltals division. Hur många hela gånger går det?
+tal = 12 // 5
+print('12 dividerat på 5. Det går',tal,'hela gånger')
+
+#Ett exempel på användningsområde är när man ska omvandla från
+#sekunder till minuter och sekunder
+tid = 80
+sekunder = tid % 60
+minuter = tid // 60
+print('tid:',tid,'s. Det blir',minuter,' min och',sekunder,'s')
+
+#Division. Precis som vanlig division blir det ett decimaltal
+tal = 12 / 5
+print('12 dividerat på 5 blir',tal)
+
+#Multiplikation
+tal = 4 * 3
+print('4 multiplicerat med 3 blir',tal)
+
+#Subtraktion
+tal = 5 - 3
+print('5 subtraherat med 3 blir',tal)
+
+#Addition
+tal = 3 + 3
+print('3 adderat med 3 blir ',tal)
+</pre>
+<div id='stb-container-4271' class='stb-container-css stb-grey-container stb-caption stb-collapsible stb-visible stb-image-big stb-ltr stb-corners stb-shadow'><div id='stb-caption-box-4271' class='stb-grey-caption_box stb_caption stb-caption-box' ><aside class='stb-caption-icon'><img src='../../wp-content/plugins/wp-special-textboxes/themes/stb-dark/gears.png'></aside><span>Utskrift</span><div id="stb-tool-4271" class="stb-tool"><img id="stb-toolimg-4271" src="../../wp-content/plugins/wp-special-textboxes/themes/stb-dark/minus.png" title="Hide" /></div></div><div id='stb-body-box-4271' class='stb-grey-body_box stb_body stb-body-box' ><br />
+Basen 2 och exponenten 4 blir 16<br />
+12 dividerat på 5 ger resten 2<br />
+12 dividerat på 5. Det går 2 hela gånger<br />
+tid: 80s. Det blir 1 min och 20 s<br />
+12 dividerat på 5 blir 2.4<br />
+4 multiplicerat med 3 blir 12<br />
+5 subtraherat med 3 blir 2<br />
+3 adderat med 3 blir 6<br />
+</div></div>
+<div id='stb-container-1730' class='stb-container-css stb-download-container stb-caption stb-collapsible stb-visible stb-image-big stb-ltr stb-corners stb-shadow'><div id='stb-caption-box-1730' class='stb-download-caption_box stb_caption stb-caption-box' ><aside class='stb-caption-icon'><img src='../../wp-content/plugins/wp-special-textboxes/themes/stb-dark/download.png'></aside><span>Övningar</span><div id="stb-tool-1730" class="stb-tool"><img id="stb-toolimg-1730" src="../../wp-content/plugins/wp-special-textboxes/themes/stb-dark/minus.png" title="Hide" /></div></div><div id='stb-body-box-1730' class='stb-download-body_box stb_body stb-body-box' ></p>
+<p>Se upp när du ska utföra division och multiplikation tillsammans. Den första uträkningen är 15/15. Den andra är 5*5.</p>
+<p>&gt;&gt;&gt; 15/(3*5)<br />
+1.0<br />
+&gt;&gt;&gt; 15/3*5<br />
+25.0<br />
+&gt;&gt;&gt;</p>
+<p>&nbsp;</p>
+<h2><span id="Forkortat_skrivsatt">Förkortat skrivsätt</span></h2>
+<p>För att tilldela 2 till en befintlig variabel skriver man a = a + 2. Men man kan också skriva a += 2. Se tabellen för hur man fö<br />
+&gt;&gt;&gt; a = 3<br />
+&gt;&gt;&gt; a += 2<br />
+&gt;&gt;&gt; a<br />
+5</p>
+<h3><span id="Ovning_22">Övning 2.2</span></h3>
+<p>Gör ett program som omvandlar 329 sekunder till minuter och sekunder</p>
+<h3><span id="Ovning_23">Övning 2.3</span></h3>
+<p>Gör ett program som omvandlar 157 minuter till timmar och minuter<br />
+</div></div>
+<p>När man skriver kod = annan_kod kallas det tilldelning (eng. assignment). Tänk så här: Det som står till höger har ett värde som ska tilldelas (kopieras till) variabeln till vänster om likhetstecknet.</p>
+<p>Skapa en ny fil och kalla den tilldelning.py. Skriv in koden nedan. Ändra gärna talen och försök tänka ut hur svaret ska bli. För att skriva ut värdet på en variabel i en sträng kan man antingen skriva print(&#8216;talA är &#8216; + str(talA) + &#8216; och talB är &#8216;+str(talB)) eller print(&#8216;talA är &#8216;, talA, &#8216; och talB är &#8216;,talB). Fördelen med den sista är att man behöver inte omvandla variabeln till en sträng och man slipper skriva +-tecken och lämna mellanrum.</p>
+</div>
+<div>
+<pre class="brush: python; title: ; notranslate" title="">
+talA = 3
+talB = 4
+print('talA är', talA, 'och talB är',talB)
+
+talA = talB  #nu är talA: 4 och talB är fortfarande 4
+print('talA är',talA,' och talB är',talB)
+
+talA = 6 + talB #nu är talA: 10 (6 + 4)
+print('talA är',talA,'och talB är',talB)
+
+talA = talA + 2 #nu är A: 12 (10+2)
+print('talA är',talA,'och talB är',talB)
+
+</pre>
+<div id='stb-container-2608' class='stb-container-css stb-grey-container stb-caption stb-collapsible stb-visible stb-image-big stb-ltr stb-corners stb-shadow'><div id='stb-caption-box-2608' class='stb-grey-caption_box stb_caption stb-caption-box' ><aside class='stb-caption-icon'><img src='../../wp-content/plugins/wp-special-textboxes/themes/stb-dark/gears.png'></aside><span>Utskrift</span><div id="stb-tool-2608" class="stb-tool"><img id="stb-toolimg-2608" src="../../wp-content/plugins/wp-special-textboxes/themes/stb-dark/minus.png" title="Hide" /></div></div><div id='stb-body-box-2608' class='stb-grey-body_box stb_body stb-body-box' ><br />
+talA är 3 och talB är 4<br />
+talA är 4 och talB är 4<br />
+talA är 10 och talB är 4<br />
+talA är 12 och talB är 4<br />
+</div></div>
+</div>
+<p>&nbsp;</p>
+<div>
+<h2><span id="Kommentarer">Kommentarer</span></h2>
+<p>För att underlätta för dig själv och andra som läser din kod bör du skriva kommentarer som förklarar koden.</p>
+<div>Detta kallas att kommentera koden. Man kommenterar koden för att ge information till sig själv eller andra utvecklare som arbetar med koden. Man kan också använda kommentarer för att kommentera bort kod tillfälligt vid felsökning. Exakt hur mycket man ska kommentera och hur ska man kommentera kan man läsa om i  <a href="https://www.python.org/dev/peps/pep-0008/#comments" target="_blank" rel="nofollow noopener noreferrer">Pythons Style Guide for Python Code</a>. Sammanfattningsvis kan man säga:</div>
+<div>
+<ul>
+<li>Skriv inte kommentarer som motsäger andra kommentarer.</li>
+<li>Kom ihåg att uppdatera kommentarerna när du ändrar i koden</li>
+<li>Skriv kommentarer med hela meningar.</li>
+<li>Om du kommer från icke engelsktalande länder skriv ändå kommentarer på engelska om du inte är helt säker på att endast de som kan läsa exempelvis svenska kommer att läsa kommentarerna</li>
+</ul>
+<div>Om du vill kommentera en rad, sätt # framför raden. Då kommer Python ignorera den raden när den översätter koden till maskinkod.</div>
+</div>
+<div></div>
+<pre class="brush: python; title: ; notranslate" title="">
+#Raden nedan skriver ut ordet Hello
+print('Hello')
+För att kommentera flera rader bör man sätta tre (') eller tre (&quot;)
+'''
+En rad
+En rad till
+Ytterligare en rad
+'''
+</pre>
+<h2><span id="Strangar"><span style="color: #000000;">Strängar</span></span></h2>
+<div></div>
+</div>
+</div>
+<div>
+<div></div>
+<div>
+<div><span style="color: #000000;">I Python kan man man multiplicera en sträng och då få samma sträng det antalet man multiplicerat med</span></div>
+<div>
+<div>&gt;&gt;&gt; &#8216;Python&#8217;*5</div>
+<div>&#8216;PythonPythonPythonPythonPython&#8217;</div>
+</div>
+</div>
+</div>
+<h3><span id="Escapesekvenser">Escapesekvenser</span></h3>
+<div>
+<div>
+<p>Ibland behöver man göra indrag i texten som ska synas för användaren. Då skriven man ett bakstreck och t som i tabb (\t). Om det behövs en ny rad skrivs det (\n)</p>
+<p>Skriv in koden nedan i ett program du kallar tabb.py</p>
+<pre class="brush: python; title: ; notranslate" title="">
+#\t används om mann vill göra indrag i utskrifter
+spam = &quot;Python&quot;
+print(spam)
+print(&quot;\t&quot;+spam)
+
+
+#\&quot; om du vill skriva ut dubbelt eller enkelt citattecekn i en sträng kan du göra så här
+print(&quot;\&quot;Jag undrar\&quot;, muttrade Bengt, \&quot;om jag skall byta olja på bilen.\&quot;&quot;)
+#Dock är det lättare att sätta enkelt citattecken ytterst istället
+print('&quot;Jag undrar&quot;, muttrade Bengt, &quot;om jag skall byta olja på bilen.&quot;')
+
+#På liknade sätt kan man sätta dubbla citattecken när man har enkelt citattecken i strängen
+print('I don\'t understand')
+print(&quot;I don't understand&quot;)
+</pre>
+<p>&nbsp;</p>
+<div id='stb-container-3168' class='stb-container-css stb-grey-container stb-caption stb-collapsible stb-visible stb-image-big stb-ltr stb-corners stb-shadow'><div id='stb-caption-box-3168' class='stb-grey-caption_box stb_caption stb-caption-box' ><aside class='stb-caption-icon'><img src='../../wp-content/plugins/wp-special-textboxes/themes/stb-dark/gears.png'></aside><span>Utskrift</span><div id="stb-tool-3168" class="stb-tool"><img id="stb-toolimg-3168" src="../../wp-content/plugins/wp-special-textboxes/themes/stb-dark/minus.png" title="Hide" /></div></div><div id='stb-body-box-3168' class='stb-grey-body_box stb_body stb-body-box' ><br />
+Python<br />
+<span style="padding-left: 25px;">Python</span><br />
+Python<br />
+Python<br />
+Python<br />
+</div></div>
+<p>Det finns fler escapesekvenser. Några vanliga finns i tabellen nedan. En utförlig lista <a href="https://www.quackit.com/python/reference/python_3_escape_sequences.cfm">finns här</a>.</p>
+
+<table id="tablepress-5" class="tablepress tablepress-id-5">
+<thead>
+<tr class="row-1 odd">
+	<th class="column-1">Escapesekvens</th><th class="column-2">Förklaring</th>
+</tr>
+</thead>
+<tbody class="row-hover">
+<tr class="row-2 even">
+	<td class="column-1">\t</td><td class="column-2">tab, flyttar fram 8 steg på en rad</td>
+</tr>
+<tr class="row-3 odd">
+	<td class="column-1">\n</td><td class="column-2">radbrytning</td>
+</tr>
+<tr class="row-4 even">
+	<td class="column-1">\\</td><td class="column-2">utskrift av ett backslash</td>
+</tr>
+<tr class="row-5 odd">
+	<td class="column-1">\'</td><td class="column-2">utskrift av enkelt citattecken</td>
+</tr>
+<tr class="row-6 even">
+	<td class="column-1">\"</td><td class="column-2">utskrift av dubbelt citattecken</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+<p>&nbsp;</p>
+<div>
+<h3><span id="Mata_in_data_till_ett_program">Mata in data till ett program</span></h3>
+<p>Nu ska vi skriva ett lite längre program</p>
+<p>Spara filen nedan som om_mig.py</p>
+</div>
+<pre class="brush: python; title: ; notranslate" title="">
+'''
+Detta Pythonprogram frågar efter användarens för- och efternamn
+Sedan räknar det ut när användaren är född och hur många bokstäver förnamnet
+'''
+
+print('Hej')
+print('Vad är ditt förnamn')
+#Med funktionen input() väntar Python på att användaren ska mata in något från tangetbordet
+fornamn = input()
+
+print('Vad är ditt efternamn')
+efternamn = input()
+
+#När man lägger till title() till en sträng görs en kopia av strängen och kopian skrivs ut med fösta bokstaven stor.
+#Dock ändras inte ursprungsvariablen
+print('Hej! ' + fornamn.title() + ' ' + efternamn.title())
+
+# len(fornamn) kollar hur många tecken fornamn har och ger ett tal
+print('Ditt förnamn: ',fornamn.title(),'har',len(fornamn),'bokstäver')
+</pre>
+<div id='stb-container-1532' class='stb-container-css stb-grey-container stb-caption stb-collapsible stb-visible stb-image-big stb-ltr stb-corners stb-shadow'><div id='stb-caption-box-1532' class='stb-grey-caption_box stb_caption stb-caption-box' ><aside class='stb-caption-icon'><img src='../../wp-content/plugins/wp-special-textboxes/themes/stb-dark/gears.png'></aside><span>Utskrift</span><div id="stb-tool-1532" class="stb-tool"><img id="stb-toolimg-1532" src="../../wp-content/plugins/wp-special-textboxes/themes/stb-dark/minus.png" title="Hide" /></div></div><div id='stb-body-box-1532' class='stb-grey-body_box stb_body stb-body-box' ><br />
+Hej<br />
+Vad är ditt förnamn<br />
+Adam<br />
+Vad är ditt efternamn<br />
+Bertilsson<br />
+Hej! Adam Bertilsson<br />
+Ditt förnamn: Adam har 4 bokstäver<br />
+</div></div>
+<p>Koden innehåller en del nytt. Du har redan använt print(). När man skriver en kod som har () efter sig använder man sig av en funktion.<br />
+En funktion är en färdig kod som kan finnas inbyggt i Python eller så kan du själv skapa en funktion som du använder dig av. Mer om detta längre fram.</p>
+<p>Funktionen input() väntar på att användaren ska mata in något från tangetbordet och trycka på Enter. Oftast vill man lagra det användaren matat in i en variabel. I exemplet ovan i variablen fornamn och efternamn.</p>
+<p>Läs i kodkommentaren hur title kan användas. Funktionen len(argument) behöver ett argument som skickas med till funktionen för att kunna utföras. Läs mer i den kommenterade koden. Innan du använder en ny funktion bör du söka upp den i Pythons dokumentation. Du hittar <a href="https://docs.python.org/3/library/functions.html?highlight=len#len">dokumentationen om len(s) här</a>.</p>
+<div id='stb-container-9826' class='stb-container-css stb-download-container stb-caption stb-collapsible stb-visible stb-image-big stb-ltr stb-corners stb-shadow'><div id='stb-caption-box-9826' class='stb-download-caption_box stb_caption stb-caption-box' ><aside class='stb-caption-icon'><img src='../../wp-content/plugins/wp-special-textboxes/themes/stb-dark/download.png'></aside><span>Övningar</span><div id="stb-tool-9826" class="stb-tool"><img id="stb-toolimg-9826" src="../../wp-content/plugins/wp-special-textboxes/themes/stb-dark/minus.png" title="Hide" /></div></div><div id='stb-body-box-9826' class='stb-download-body_box stb_body stb-body-box' ></p>
+<h3><span id="Ovning_24">Övning 2.4</span></h3>
+<div>Gör ett program där du ska mata in tre favoritfilmer och deras längd i minuter.  Du ska summera filmernas längder och omvandla summan från minuter till hela timmar och minuter. Så här kan utskriften bli:</div>
+<p><div id='stb-container-4095' class='stb-container-css stb-grey-container stb-caption stb-collapsible stb-visible stb-image-big stb-ltr stb-corners stb-shadow'><div id='stb-caption-box-4095' class='stb-grey-caption_box stb_caption stb-caption-box' ><aside class='stb-caption-icon'><img src='../../wp-content/plugins/wp-special-textboxes/themes/stb-dark/gears.png'></aside><span>Utskrift</span><div id="stb-tool-4095" class="stb-tool"><img id="stb-toolimg-4095" src="../../wp-content/plugins/wp-special-textboxes/themes/stb-dark/minus.png" title="Hide" /></div></div><div id='stb-body-box-4095' class='stb-grey-body_box stb_body stb-body-box' ></p>
+<p>Mata in film 1 Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb<br />
+Mata in längden på film 1 i min: 95<br />
+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;<br />
+Mata in film 2 Star Wars: Episode IV &#8211; A New Hope<br />
+Mata in längden på film 2 i min: 121<br />
+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;<br />
+Mata in film 3 Frequently Asked Questions About Time Travel<br />
+Mata in längden på film 3 i min: 83<br />
+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;<br />
+Dr. Strangelove Or: How I Learned To Stop Worrying And Love The Bomb: 95<br />
+Star Wars: Episode Iv &#8211; A New Hope: 121<br />
+Frequently Asked Questions About Time Travel: 83<br />
+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;<br />
+Totallängd: 4 tim och 59 min</p>
+<p></div></div></p>
+<p></div></div>
+</div>
+<div></div>
+</div>
+		
+				
+		<div class='fca_qc_quiz' id='fca_qc_quiz_645'>
+			<span class='fca_qc_mobile_check'></span>
+			<h2 class='fca_qc_quiz_title'><span id="Programmering_1_8211_Kapitel_2">Programmering 1 &#8211; Kapitel 2</span></h2>
+			<div class='fca_qc_quiz_description'></div>
+			<img class='fca_qc_quiz_description_img' src=''>
+			
+			<button type='button' class='fca_qc_button fca_qc_start_button'>Start Quiz</button>
+			
+			<div class='flip-container fca_qc_quiz_div' style='display: none;'>
+				<div class='fca-qc-flipper'>
+					<div class='fca-qc-front' id='fca_qc_answer_container'><p id='fca_qc_question'>Question</p><img class='fca_qc_quiz_question_img' src=''><div class='fca_qc_answer_div' data-question='1'><img class='fca_qc_quiz_answer_img' src=''><span class='fca_qc_answer_span'></span></div><div class='fca_qc_answer_div' data-question='2'><img class='fca_qc_quiz_answer_img' src=''><span class='fca_qc_answer_span'></span></div><div class='fca_qc_answer_div' data-question='3'><img class='fca_qc_quiz_answer_img' src=''><span class='fca_qc_answer_span'></span></div><div class='fca_qc_answer_div' data-question='4'><img class='fca_qc_quiz_answer_img' src=''><span class='fca_qc_answer_span'></span></div></div> 
+					<div class='fca-qc-back' id='fca_qc_back_container'><p id='fca_qc_question_right_or_wrong'></p><img class='fca_qc_quiz_question_img' src=''><span id='fca_qc_question_back'></span><p id='fca_qc_back_response_p' class='fca_qc_back_response'>Your answer: <span id='fca_qc_your_answer'></span></p><p id='fca_qc_correct_answer_p' class='fca_qc_back_response'>Correct answer: <span id='fca_qc_correct_answer'></span></p><p id='fca_qc_hint_p' class='fca_qc_back_response'></p><button type='button' class='fca_qc_next_question'>Next</button></div> 
+					
+				</div>
+			</div>
+			<div class='fca_qc_score_container' style='display:none;'><p class='fca_qc_score_text'>You got {{SCORE_CORRECT}} out of {{SCORE_TOTAL}} </p><h3 class='fca_qc_score_title'></h3><img class='fca_qc_score_img' src=''><p class='fca_qc_score_desc'></p></div> 
+			
+			<div class='fca_qc_quiz_footer' style='display: none;'>
+				<span class='fca_qc_question_count'></span>		
+			</div>
+						
+			<div class='fca_qc_your_answer_container' style='display:none;'><p class='fca_qc_your_answers_text'>Your Answers</p><div class='fca_qc_insert_response_above'></div></div> 
+			
+						
+		</div>
+		
+		</div><!-- .entry-content -->
+
+			</div><!-- .inside-article -->
+</article><!-- #post-## -->
+
+					<div class="comments-area">
+						<div id="comments">
+
+		<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Comment <small><a rel="nofollow" id="cancel-comment-reply-link" href="index.html#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="http://paubel.se/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-form-comment"><label for="comment" class="screen-reader-text">Comment</label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p><label for="author" class="screen-reader-text">Name</label><input placeholder="Name *" id="author" name="author" type="text" value="" size="30" />
+<label for="email" class="screen-reader-text">Email</label><input placeholder="Email *" id="email" name="email" type="email" value="" size="30" />
+<label for="url" class="screen-reader-text">Website</label><input placeholder="Website" id="url" name="url" type="url" value="" size="30" />
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='11' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="f89d403d2a" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="161"/></p>			</form>
+			</div><!-- #respond -->
+	
+</div><!-- #comments -->
+					</div>
+
+						</main><!-- #main -->
+	</div><!-- #primary -->
+
+	<div id="right-sidebar" itemtype="http://schema.org/WPSideBar" itemscope="itemscope" role="complementary" class="widget-area grid-25 tablet-grid-25 grid-parent sidebar">
+	<div class="inside-right-sidebar">
+		<aside id="nav_menu-2" class="widget inner-padding widget_nav_menu"><div class="menu-right-container"><ul id="menu-right-1" class="menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-page-ancestor current-menu-ancestor current-menu-parent current-page-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-62"><a href="../../index.html">Programmering 1</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-63"><a href="../kapitel-1/index.html">P1 – Kapitel 1</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-11 current_page_item menu-item-64"><a href="index.html">P1 – Kapitel 2</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-151"><a href="../kapitel-3/index.html">P1 – Kapitel 3</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-309"><a href="../kapitel-4/index.html">P1 – Kapitel 4</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-308"><a href="../kapitel-5/index.html">P1 – Kapitel 5</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-653"><a href="../kapitel-6/index.html">P1 – Kapitel 6</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-655"><a href="../kapitel-7/index.html">P1 – Kapitel 7</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-658"><a href="../p1-kapitel-8/index.html">P1 – Kapitel 8</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-475"><a href="../../om-mig/index.html">Om mig</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-690"><a href="../../blogg/index.html">Blogg</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-684"><a href="../../tack/index.html">Tack</a></li>
+</ul></div></aside>	</div><!-- .inside-right-sidebar -->
+</div><!-- #secondary -->
+
+	</div><!-- #content -->
+</div><!-- #page -->
+
+
+<div class="site-footer  ">
+			<footer class="site-info" itemtype="http://schema.org/WPFooter" itemscope="itemscope">
+			<div class="inside-site-info grid-container grid-parent">
+								<div class="copyright-bar">
+					<span class="copyright">&copy; 2019</span> &bull; <a href="https://generatepress.com" target="_blank" itemprop="url">GeneratePress</a>				</div>
+			</div>
+		</footer><!-- .site-info -->
+		</div><!-- .site-footer -->
+
+<div id="um_upload_single" style="display:none">
+	
+</div><div id="um_view_photo" style="display:none">
+
+	<a href="index.html#" data-action="um_remove_modal" class="um-modal-close"><i class="um-faicon-times"></i></a>
+	
+	<div class="um-modal-body photo">
+	
+		<div class="um-modal-photo">
+
+		</div>
+
+	</div>
+	
+</div><script type='text/javascript' src='../../wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/shCore-ver=2.1.364.js'></script>
+<script type='text/javascript' src='../../wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/shBrushPython-ver=2.1.364.js'></script>
+<script type='text/javascript'>
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = "http://paubel.se/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/styles/shCore.css?ver=2.1.364";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
+		var themecssurl = "http://paubel.se/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/styles/shThemeDefault.css?ver=2.1.364";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		//document.getElementById("syntaxhighlighteranchor").appendChild(themecss);
+		document.getElementsByTagName("head")[0].insertBefore( themecss, document.getElementById("syntaxhighlighteranchor") );
+	})();
+	SyntaxHighlighter.config.clipboardSwf = 'http://paubel.se/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf';
+	SyntaxHighlighter.config.strings.expandSource = 'show source';
+	SyntaxHighlighter.config.strings.viewSource = 'view source';
+	SyntaxHighlighter.config.strings.copyToClipboard = 'copy to clipboard';
+	SyntaxHighlighter.config.strings.copyToClipboardConfirmation = 'The code is in your clipboard now';
+	SyntaxHighlighter.config.strings.print = 'print';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t configured for html-script option: ';
+	SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+	SyntaxHighlighter.all();
+</script>
+<link rel='stylesheet' id='fca_qc_quiz_stylesheet-css'  href='../../wp-content/plugins/quiz-cat/includes/quiz/quiz.min-ver=1.5.0.css' type='text/css' media='all' />
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wpcf7 = {"apiSettings":{"root":"http:\/\/paubel.se\/wp-json\/contact-form-7\/v1","namespace":"contact-form-7\/v1"},"recaptcha":{"messages":{"empty":"Please verify that you are not a robot."}}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='../../wp-content/plugins/contact-form-7/includes/js/scripts-ver=5.0.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var sticky_anything_engage = {"element":"","topspace":"0","minscreenwidth":"0","maxscreenwidth":"999999","zindex":"1","legacymode":"","dynamicmode":"","debugmode":"","pushup":"","adminbar":"1"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='../../wp-content/plugins/sticky-menu-or-anything-on-scroll/assets/js/stickThis-ver=2.1.1.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var tocplus = {"visibility_show":"show","visibility_hide":"hide","width":"Auto"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='../../wp-content/plugins/table-of-contents-plus/front.min-ver=1509.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wc_add_to_cart_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"http:\/\/paubel.se\/?wc-ajax=%%endpoint%%","i18n_view_cart":"View cart","cart_url":"http:\/\/paubel.se\/cart\/","is_cart":"","cart_redirect_after_add":"no"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='../../wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min-ver=3.2.1.js'></script>
+<script type='text/javascript' src='../../wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min-ver=2.70.js'></script>
+<script type='text/javascript' src='../../wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min-ver=2.1.4.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var woocommerce_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"http:\/\/paubel.se\/?wc-ajax=%%endpoint%%"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='../../wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min-ver=3.2.1.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wc_cart_fragments_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"http:\/\/paubel.se\/?wc-ajax=%%endpoint%%","fragment_name":"wc_fragments_d4b72aa69f519d69fe05776af5353561"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='../../wp-content/plugins/woocommerce/assets/js/frontend/cart-fragments.min-ver=3.2.1.js'></script>
+<!--[if lte IE 11]>
+<script type='text/javascript' src='../../wp-content/themes/generatepress/js/classList.min-ver=2.0.2.js'></script>
+<![endif]-->
+<script type='text/javascript' src='../../wp-content/themes/generatepress/js/menu.min-ver=2.0.2.js'></script>
+<script type='text/javascript' src='../../wp-content/themes/generatepress/js/a11y.min-ver=2.0.2.js'></script>
+<script type='text/javascript' src='../../wp-content/themes/generatepress/js/dropdown.min-ver=2.0.2.js'></script>
+<script type='text/javascript' src='../../wp-includes/js/comment-reply.min-ver=4.9.9.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var q2w3_sidebar_options = [{"sidebar":"colormag_right_sidebar","margin_top":0,"margin_bottom":0,"stop_id":"","screen_max_width":0,"screen_max_height":0,"width_inherit":false,"refresh_interval":1500,"window_load_hook":false,"disable_mo_api":false,"widgets":["nav_menu-2"]},{"sidebar":"sidebar-1","margin_top":0,"margin_bottom":0,"stop_id":"","screen_max_width":0,"screen_max_height":0,"width_inherit":false,"refresh_interval":1500,"window_load_hook":false,"disable_mo_api":false,"widgets":["nav_menu-2"]}];
+/* ]]> */
+</script>
+<script type='text/javascript' src='../../wp-content/plugins/q2w3-fixed-widget/js/q2w3-fixed-widget.min-ver=5.1.4.js'></script>
+<script type='text/javascript' src='../../wp-includes/js/imagesloaded.min-ver=3.2.0.js'></script>
+<script type='text/javascript' src='../../wp-includes/js/masonry.min-ver=3.3.2.js'></script>
+<script type='text/javascript' src='../../wp-includes/js/jquery/jquery.masonry.min-ver=3.1.2b.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var um_scripts = {"ajaxurl":"http:\/\/paubel.se\/wp-admin\/admin-ajax.php","fileupload":"http:\/\/paubel.se\/wp-content\/plugins\/ultimate-member\/core\/lib\/upload\/um-file-upload.php","imageupload":"http:\/\/paubel.se\/wp-content\/plugins\/ultimate-member\/core\/lib\/upload\/um-image-upload.php"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='../../wp-content/plugins/ultimate-member/assets/js/um.min-ver=1.3.88.js'></script>
+<script type='text/javascript' src='../../wp-includes/js/jquery/ui/effect.min-ver=1.11.4.js'></script>
+<script type='text/javascript' src='../../wp-includes/js/jquery/ui/effect-blind.min-ver=1.11.4.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var stbUserOptions = {"mode":"css","cssOptions":{"roundedCorners":true,"mbottom":10,"imgHide":"http:\/\/paubel.se\/wp-content\/plugins\/wp-special-textboxes\/themes\/stb-dark\/minus.png","imgShow":"http:\/\/paubel.se\/wp-content\/plugins\/wp-special-textboxes\/themes\/stb-dark\/plus.png","strHide":"Hide","strShow":"Show"}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='../../wp-content/plugins/wp-special-textboxes/js/wstb.min-ver=5.9.107.js'></script>
+<script type='text/javascript' src='../../wp-includes/js/wp-embed.min-ver=4.9.9.js'></script>
+<script type='text/javascript' src='../../wp-content/plugins/quiz-cat/includes/quiz/jquery.waitforimages.min-ver=1.5.0.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var quizData_645 = {"quiz_id":"645","quiz_meta":{"desc":"","desc_img_src":"","title":"Programmering 1 \u2013 Kapitel 2"},"questions":[{"question":"Vilken av f\u00f6ljande \u00e4r ett otill\u00e5tligt variabelnamn i Python?","img":"","id":"{{ID}}","answers":[{"answer":"123","img":"","id":"{{ID}}","hint":""},{"answer":"a3","img":"","id":"{{ID}}"},{"answer":"Pelle","img":"","id":"63a9886a-5479-4849-92a8-320af1b62640"},{"answer":"enVariabel","img":"","id":"f377b939-cb8f-459d-9978-517b07402be0"}]},{"question":"Vilken av f\u00f6ljande \u00e4r ett till\u00e5tet variabelnamn i Python?","img":"","id":"fd29b399-2c2c-4818-bfad-81c4a676eddd","answers":[{"answer":"en_variabel","img":"","id":"426d30be-398d-4144-bfa8-880a403be329","hint":""},{"answer":"en variabel","img":"","id":"babc0185-eccd-4662-bb39-1781e5b97228"},{"answer":"print","img":"","id":"7d499d53-5097-434e-8903-58dd3c03e038"}]}],"quiz_results":[{"title":"Tr\u00e4na mer n\u00e4sta g\u00e5ng","desc":"","img":"","min":"0","max":"1","url":"","tags":"","groups":[]},{"title":"Alla r\u00e4tt!","desc":"","img":"","min":"2","max":"2","url":"","tags":"","groups":[]}],"quiz_settings":{"quiz_type":"mc","hide_answers":"","result_mode":""},"wrong_string":"Wrong!","correct_string":"Correct!","your_answer_string":"Your answer:","correct_answer_string":"Correct answer:","optin_settings":[],"nonce":"1525b19342","ajaxurl":"http:\/\/paubel.se\/wp-admin\/admin-ajax.php","default_img":"http:\/\/paubel.se\/wp-content\/plugins\/quiz-cat\/assets\/quizcat-240x240.png"};
+var fcaQcData = {"debug":"","analytics":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='../../wp-content/plugins/quiz-cat/includes/quiz/quiz.min-ver=1.5.0.js'></script>
+<script async="async" type='text/javascript' src='../../wp-content/plugins/akismet/_inc/form-ver=4.0.2.js'></script>
+
+		<script type="text/javascript">jQuery( '#request' ).val( '' );</script>
+
+	
+</body>
+</html>
